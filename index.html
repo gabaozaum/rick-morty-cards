@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multiverso Rick and Morty | Catálogo de personagens</title>
+  <meta name="description" content="Catálogo de personagens de Rick and Morty consumindo a API pública rickandmortyapi.com com HTML, CSS e JavaScript puros.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="logo" href="#inicio">Multiverso</a>
+    <nav aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#personagens">Personagens</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="portal" aria-hidden="true"></div>
+      <div class="hero-texto">
+        <h1>Wubba lubba dub dub!</h1>
+        <p>Explore os personagens de Rick and Morty direto da API oficial da série, com dados carregados em tempo real.</p>
+        <a class="botao" href="#personagens">Ver personagens</a>
+      </div>
+    </section>
+
+    <section class="sobre" id="sobre">
+      <h2>Sobre a série</h2>
+      <p>Rick and Morty acompanha o cientista Rick Sanchez e seu neto Morty em viagens por dimensões alternativas. Cada personagem desta página vem da <strong>Rick and Morty API</strong>, uma API pública e gratuita, sem necessidade de token.</p>
+      <ul class="fatos" id="fatos" aria-live="polite"></ul>
+    </section>
+
+    <section class="personagens" id="personagens">
+      <h2>Personagens</h2>
+
+      <div class="filtros">
+        <label>
+          Buscar pelo nome
+          <input type="search" id="busca" placeholder="Ex.: Rick, Summer, Birdperson">
+        </label>
+        <label>
+          Status
+          <select id="status">
+            <option value="">Todos</option>
+            <option value="alive">Vivo</option>
+            <option value="dead">Morto</option>
+            <option value="unknown">Desconhecido</option>
+          </select>
+        </label>
+        <button type="button" class="botao-fav" id="btn-favoritos" aria-pressed="false">
+          Só favoritos <span id="contador-fav">0</span>
+        </button>
+      </div>
+
+      <p class="mensagem" id="mensagem" role="status" aria-live="polite"></p>
+      <div class="grade" id="grade"></div>
+
+      <div class="paginacao" id="paginacao">
+        <button type="button" id="anterior">Anterior</button>
+        <span id="pagina-info"></span>
+        <button type="button" id="proxima">Próxima</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Projeto acadêmico UniFECAF. Dados da <a href="https://rickandmortyapi.com/" target="_blank" rel="noopener">Rick and Morty API</a>.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
